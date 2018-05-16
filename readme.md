@@ -21,4 +21,4 @@ that it is a gif.
 
 Only for windows, sorry lads.
 
-[Windows 64bit](#)
+[Windows 64bit](https://raw.githubusercontent.com/JonSnowbd/Imgurandom/master/Build/Imgurandom.exe)
