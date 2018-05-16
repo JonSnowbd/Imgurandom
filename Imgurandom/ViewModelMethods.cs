@@ -166,7 +166,7 @@ namespace Imgurandom
                     return;
                 }
             }
-            throw new Exception("There might be an issue or a change in IMGUR's URLs, please wait and try again.");
+            AddNewURL("https://i.imgur.com/HI137JZ.png");
         }
     }
 }
