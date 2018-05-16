@@ -1,12 +1,32 @@
 ﻿<Window x:Class="Imgurandom.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Imgurandom"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Imgurandom" Height="350" Width="525">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="18"/>
+            <RowDefinition/>
+            <RowDefinition Height="28"/>
+        </Grid.RowDefinitions>
         
+        <!-- The top navigation bar -->
+        <TextBox Text="{Binding Path=CurrentImageURL, UpdateSourceTrigger=PropertyChanged}" Padding="0" Grid.Row="0" Background="#FF2B2B2B" Foreground="#FF9E9E9E" BorderBrush="{x:Null}" SelectionBrush="#FF657F8B"/>
+
+        <!-- Viewer -->
+        <Rectangle Fill="#333" Grid.Row="1"/>
+        <Image x:Name="ImageViewer" Source="{Binding CurrentImageURL}" Grid.Row="1" />
+        
+        <!-- Bottom Toolbar -->
+        <Rectangle Fill="#222" Grid.Row="2"/>
+        <Button x:Name="ForwardButton" Content="》" HorizontalAlignment="Right" Margin="0,0,5,0" Grid.Row="2" VerticalAlignment="Center" Width="20" Background="#FF494949" BorderBrush="{x:Null}" Foreground="#FFCBC9C9"/>
+        <Button x:Name="BackwardButton" Content="《" HorizontalAlignment="Right" Margin="0,0,30,0" Grid.Row="2" VerticalAlignment="Center" Width="20" Background="#FF494949" BorderBrush="{x:Null}" Foreground="#FFCBC9C9"/>
+        <Button x:Name="CopyButton" Content="Copy" HorizontalAlignment="Right" Margin="0,0,70,0" Grid.Row="2" VerticalAlignment="Center" Width="40" Background="#FF494949" BorderBrush="{x:Null}" Foreground="#FFCBC9C9"/>
+        <Button x:Name="OpenAsGif" Content="Gif" HorizontalAlignment="Right" Margin="0,0,120,0" Grid.Row="2" VerticalAlignment="Center" Width="40" Background="#FF494949" BorderBrush="{x:Null}" Foreground="#FFCBC9C9"/>
+        <Button x:Name="SaveButton" Content="Save" HorizontalAlignment="Right" Margin="0,0,170,0" Grid.Row="2" VerticalAlignment="Center" Width="40" Background="#FF494949" BorderBrush="{x:Null}" Foreground="#FFCBC9C9"/>
+        <Button x:Name="GenerateButton" Content="Generate" Margin="5,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="2" Width="75" Background="#FF494949" BorderBrush="{x:Null}" Foreground="#FFCBC9C9"/>
+        <Label Content="{Binding CurrentIndexAsString}" HorizontalAlignment="Left" Margin="100,0,0,0" Grid.Row="2" VerticalAlignment="Center" Foreground="White"/>
     </Grid>
 </Window>
